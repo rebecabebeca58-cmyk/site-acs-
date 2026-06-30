@@ -1,21 +1,67 @@
-<sectionclass="modulo-busca" aria-labelledby="titulo-busca">
-<divclass="busca-container">
-<h2 id="titulo-busca">Localize seu Agente Comunitário de Saúde</h2>
-<p>Insira o nome do seu bairro ou comunidade rural de Minas Novas/MG para identificar sua equipe de referência.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu ACS - ACS Conectado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<divclass="input-wrapper">
-<label for="busca-endereco" class="sr-only">Digite seu bairro ou comunidade:</label>
-<input 
-type="search" 
-                id="busca-endereco" 
-placeholder="Ex: Centro, Cruzinha, Saudade..." 
-                aria-required="true"
-autocomplete="off"
->
-</div>
+    <!-- Acessibilidade: Saltar para o conteúdo principal -->
+    <a href="#conteudo-principal" class="sr-only">Saltar para o conteúdo principal</a>
 
-<div id="resultados-acs" class="grid-resultados" aria-live="polite">
-<p class="aviso-busca">Digite o nome da sua localidade acima para iniciar.</p>
-</div>
-</div>
-</section>
+    <!-- Cabeçalho Fixo -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <strong>ACS</strong> Conectado
+            </div>
+            <nav aria-label="Navegação Principal">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="quem e meu acs.html">Quem é o ACS?</a></li>
+                    <li><a href="prevençao e cuidado .html">Prevenção e Cuidado</a></li>
+                    <li><a href="meu acs.html" aria-current="page">Meu ACS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <!-- Módulo de Busca do ACS -->
+        <section class="modulo-busca" aria-labelledby="titulo-busca">
+            <div class="busca-container">
+                <h2 id="titulo-busca">Localize seu Agente Comunitário de Saúde</h2>
+                <p>Insira o nome do seu bairro ou comunidade rural de Minas Novas/MG para identificar sua equipe de referência.</p>
+
+                <div class="input-wrapper">
+                    <label for="busca-endereco" class="sr-only">Digite seu bairro ou comunidade:</label>
+                    <input 
+                        type="search" 
+                        id="busca-endereco" 
+                        placeholder="Ex: Centro, Cruzinha, Saudade..." 
+                        aria-required="true"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div id="resultados-acs" class="grid-resultados" aria-live="polite">
+                    <p class="aviso-busca">Digite o nome da sua localidade acima para iniciar.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé e Meta -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 ACS Conectado. Desenvolvido para a otimização da Atenção Primária à Saúde.</p>
+            <p class="legal-disclaimer"><strong>Aviso Legal:</strong> Este portal possui caráter pedagógico e informativo. Não substitui a consulta médica presencial.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
