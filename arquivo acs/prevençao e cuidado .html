@@ -1,128 +1,146 @@
-Este HTML utiliza elementos semânticos de formulário (<fieldset>, <legend>, <input type="checkbox">) que são nativamente acessíveis para leitores de tela.
-<sectionclass="prevencao-educativa" aria-labelledby="titulo-prevencao">
-<divclass="container-prevencao">
-<h2 id="titulo-prevencao">Espaço Prevenção e Cuidado</h2>
-<p class="subtitulo-secao">Monitore seus fatores de risco e adote hábitos salubres com nossas ferramentas interativas de triagem.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevenção e Cuidado - ACS Conectado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<divclass="grid-prevencao">
+    <!-- Acessibilidade: Saltar para o conteúdo principal -->
+    <a href="#conteudo-principal" class="sr-only">Saltar para o conteúdo principal</a>
 
-<articleclass="card-ferramenta" aria-labelledby="titulo-imc">
-<h3 id="titulo-imc">📊 Calculadora de IMC Interativa</h3>
-<p class="desc-ferramenta">O excesso de peso é um fator de risco crucial para Hipertensão e Diabetes. Calcule o seu índice instantaneamente:</p>
+    <!-- Cabeçalho Fixo -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <strong>ACS</strong> Conectado
+            </div>
+            <nav aria-label="Navegação Principal">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="quem e meu acs.html">Quem é o ACS?</a></li>
+                    <li><a href="prevençao e cuidado .html" aria-current="page">Prevenção e Cuidado</a></li>
+                    <li><a href="meu acs.html">Meu ACS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<form id="form-imc" class="form-estilizado" novalidate>
-<divclass="grupo-input">
-<label for="imc-peso">Peso atual (kg):</label>
-<input type="number" id="imc-peso" min="10" max="300" step="0.1" placeholder="Ex: 70.5" required>
-</div>
-<divclass="grupo-input">
-<label for="imc-altura">Altura (metros):</label>
-<input type="number" id="imc-altura" min="0.5" max="2.5" step="0.01" placeholder="Ex: 1.75" required>
-</div>
-<buttontype="submit" class="btn-primario">Calcular Meu IMC</button>
-</form>
+    <main id="conteudo-principal">
 
-<div id="resultado-imc" class="painel-feedback" aria-live="polite" hidden></div>
-</article>
+        <!-- Espaço Prevenção e Cuidado -->
+        <section class="prevencao-educativa" aria-labelledby="titulo-prevencao">
+            <div class="container-prevencao">
+                <h2 id="titulo-prevencao">Espaço Prevenção e Cuidado</h2>
+                <p class="subtitulo-secao">Monitore seus fatores de risco e adote hábitos salubres com nossas ferramentas interativas de triagem.</p>
 
-<articleclass="card-ferramenta" aria-labelledby="titulo-checklist">
-<h3 id="titulo-checklist">📋 Checklist de Sinais e Sintomas</h3>
-<p class="desc-ferramenta">Selecione abaixo os sintomas ou fatores que você tem vivenciado recentemente para receber orientações preventivas:</p>
+                <div class="grid-prevencao">
 
-<fieldsetclass="fieldset-checklist">
-<legendclass="sr-only">Sintomas e fatores de risco</legend>
+                    <!-- Calculadora de IMC -->
+                    <article class="card-ferramenta" aria-labelledby="titulo-imc">
+                        <h3 id="titulo-imc">📊 Calculadora de IMC Interativa</h3>
+                        <p class="desc-ferramenta">O excesso de peso é um fator de risco crucial para Hipertensão e Diabetes. Calcule o seu índice instantaneamente:</p>
 
-<labelclass="item-check">
-<input type="checkbox" name="sintoma" value="pressao">
-<span>Dor de cabeça constante ou na nuca (Cefaleia)</span>
-</label>
+                        <form id="form-imc" class="form-estilizado" novalidate>
+                            <div class="grupo-input">
+                                <label for="imc-peso">Peso atual (kg):</label>
+                                <input type="number" id="imc-peso" min="10" max="300" step="0.1" placeholder="Ex: 70.5" required>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="imc-altura">Altura (metros):</label>
+                                <input type="number" id="imc-altura" min="0.5" max="2.5" step="0.01" placeholder="Ex: 1.75" required>
+                            </div>
+                            <button type="submit" class="btn-primario">Calcular Meu IMC</button>
+                        </form>
 
-<labelclass="item-check">
-<input type="checkbox" name="sintoma" value="visao">
-<span>Visão embaçada ou turva com frequência</span>
-</label>
+                        <div id="resultado-imc" class="painel-feedback" aria-live="polite" hidden></div>
+                    </article>
 
-<labelclass="item-check">
-<input type="checkbox" name="sintoma" value="sede">
-<span>Sede excessiva e boca seca constantemente (Polidipsia)</span>
-</label>
+                    <!-- Checklist de Sintomas -->
+                    <article class="card-ferramenta" aria-labelledby="titulo-checklist">
+                        <h3 id="titulo-checklist">📋 Checklist de Sinais e Sintomas</h3>
+                        <p class="desc-ferramenta">Selecione abaixo os sintomas ou fatores que você tem vivenciado recentemente para receber orientações preventivas:</p>
 
-<labelclass="item-check">
-<input type="checkbox" name="sintoma" value="urina">
-<span>Vontade de urinar muitas vezes, principalmente à noite (Poliúria)</span>
-</label>
+                        <fieldset class="fieldset-checklist">
+                            <legend class="sr-only">Sintomas e fatores de risco</legend>
 
-<labelclass="item-check">
-<input type="checkbox" name="sintoma" value="historico">
-<span>Possuo histórico de Hipertensão/Diabetes na família próxima</span>
-</label>
-</fieldset>
+                            <label class="item-check">
+                                <input type="checkbox" name="sintoma" value="pressao">
+                                <span>Dor de cabeça constante ou na nuca (Cefaleia)</span>
+                            </label>
 
-<div id="resultado-checklist" class="painel-feedback painel-alerta" aria-live="polite">
-<p>Marque os itens acima para receber a triagem educacional do seu ACS.</p>
-</div>
-</article>
+                            <label class="item-check">
+                                <input type="checkbox" name="sintoma" value="visao">
+                                <span>Visão embaçada ou turva com frequência</span>
+                            </label>
 
-</div>
-</div>
-</section>
+                            <label class="item-check">
+                                <input type="checkbox" name="sintoma" value="sede">
+                                <span>Sede excessiva e boca seca constantemente (Polidipsia)</span>
+                            </label>
 
+                            <label class="item-check">
+                                <input type="checkbox" name="sintoma" value="urina">
+                                <span>Vontade de urinar muitas vezes, principalmente à noite (Poliúria)</span>
+                            </label>
 
+                            <label class="item-check">
+                                <input type="checkbox" name="sintoma" value="historico">
+                                <span>Possuo histórico de Hipertensão/Diabetes na família próxima</span>
+                            </label>
+                        </fieldset>
 
-<articleclass="card-ferramenta completo" aria-labelledby="titulo-vacina">
-<h3 id="titulo-vacina">💉 Calendário de Vacinação Dinâmico (Metas 2026)</h3>
-<p class="desc-ferramenta">Filtre as vacinas recomendadas pelo Programa Nacional de Imunizações (PNI) para garantir a proteção da sua família:</p>
+                        <div id="resultado-checklist" class="painel-feedback painel-alerta" aria-live="polite">
+                            <p>Marque os itens acima para receber a triagem educacional do seu ACS.</p>
+                        </div>
+                    </article>
 
-<divclass="filtros-vacina" role="group" aria-label="Filtrar vacinas por idade">
-<buttonclass="btn-filtro ativo" data-filtro="todos">Todas</button>
-<buttonclass="btn-filtro" data-filtro="crianca">Crianças</button>
-<buttonclass="btn-filtro" data-filtro="adolescente">Adolescentes</button>
-<buttonclass="btn-filtro" data-filtro="adulto">Adultos / Idosos</button>
-<buttonclass="btn-filtro" data-filtro="gestante">Gestantes</button>
-</div>
+                </div>
 
-<divclass="tabela-responsiva">
-<tableclass="tabela-vacinas" aria-live="polite">
-<thead>
-<tr>
-<thscope="col">Período/Idade</th>
-<thscope="col">Vacina</th>
-<thscope="col">Doenças Evitadas</th>
-<thscope="col">Dose / Esquema</th>
-</tr>
-</thead>
-<tbody i<articleclass="card-ferramenta completo" aria-labelledby="titulo-vacina">
-<h3 id="titulo-vacina">💉 Calendário de Vacinação Dinâmico (Metas 2026)</h3>
-<p class="desc-ferramenta">Filtre as vacinas recomendadas pelo Programa Nacional de Imunizações (PNI) para garantir a proteção da sua família:</p>
+                <!-- Calendário de Vacinação -->
+                <article class="card-ferramenta completo" aria-labelledby="titulo-vacina">
+                    <h3 id="titulo-vacina">💉 Calendário de Vacinação Dinâmico (Metas 2026)</h3>
+                    <p class="desc-ferramenta">Filtre as vacinas recomendadas pelo Programa Nacional de Imunizações (PNI) para garantir a proteção da sua família:</p>
 
-<divclass="filtros-vacina" role="group" aria-label="Filtrar vacinas por idade">
-<buttonclass="btn-filtro ativo" data-filtro="todos">Todas</button>
-<buttonclass="btn-filtro" data-filtro="crianca">Crianças</button>
-<buttonclass="btn-filtro" data-filtro="adolescente">Adolescentes</button>
-<buttonclass="btn-filtro" data-filtro="adulto">Adultos / Idosos</button>
-<buttonclass="btn-filtro" data-filtro="gestante">Gestantes</button>
-</div>
+                    <div class="filtros-vacina" role="group" aria-label="Filtrar vacinas por idade">
+                        <button class="btn-filtro ativo" data-filtro="todos">Todas</button>
+                        <button class="btn-filtro" data-filtro="crianca">Crianças</button>
+                        <button class="btn-filtro" data-filtro="adolescente">Adolescentes</button>
+                        <button class="btn-filtro" data-filtro="adulto">Adultos / Idosos</button>
+                        <button class="btn-filtro" data-filtro="gestante">Gestantes</button>
+                    </div>
 
-<divclass="tabela-responsiva">
-<tableclass="tabela-vacinas" aria-live="polite">
-<thead>
-<tr>
-<thscope="col">Período/Idade</th>
-<thscope="col">Vacina</th>
-<thscope="col">Doenças Evitadas</th>
-<thscope="col">Dose / Esquema</th>
-</tr>
-</thead>
-<tbody id="corpo-tabela-vacinas">
-</tbody>
-</table>
-</div>
-</article>
-d="corpo-tabela-vacinas">
-</tbody>
-</table>
-</div>
-</article>
+                    <div class="tabela-responsiva">
+                        <table class="tabela-vacinas" aria-live="polite">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Período/Idade</th>
+                                    <th scope="col">Vacina</th>
+                                    <th scope="col">Doenças Evitadas</th>
+                                    <th scope="col">Dose / Esquema</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpo-tabela-vacinas">
+                                <!-- Preenchido dinamicamente via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
 
+            </div>
+        </section>
 
+    </main>
 
+    <!-- Rodapé e Meta -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 ACS Conectado. Desenvolvido para a otimização da Atenção Primária à Saúde.</p>
+            <p class="legal-disclaimer"><strong>Aviso Legal:</strong> Este portal possui caráter pedagógico e informativo. Não substitui a consulta médica presencial.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
