@@ -66,12 +66,16 @@ body {
 
 .nav-links a:hover, .nav-links a:focus {
     color: var(--primary-color);
-    outline: 2px solid var(--primary-color); /* CORRIGIDO: espaço adicionado */
+    outline: 2px solid var(--primary-color);
+}
+
+/* Ajuste global para conteúdo não sumir sob o cabeçalho fixo */
+main {
+    margin-top: 80px;
 }
 
 /* Banner Hero */
 .hero-banner {
-    margin-top: 60px;
     height: 60vh;
     background: linear-gradient(rgba(40, 167, 69, 0.85), rgba(0, 123, 255, 0.7)), url('../assets/hero-bg.jpg') center/cover no-repeat;
     display: flex;
@@ -102,7 +106,7 @@ body {
 .btn-cta:hover, .btn-cta:focus {
     transform: scale(1.05);
     background-color: var(--light-color);
-    outline: 3px solid var(--white); /* CORRIGIDO: espaço adicionado */
+    outline: 3px solid var(--white);
 }
 
 /* Seção de Cards com CSS Grid */
@@ -119,7 +123,7 @@ body {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 Coluna no Mobile */
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
@@ -127,12 +131,11 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 8px;
-    border-top: 5px solid var(--primary-color); /* CORRIGIDO: espaço adicionado */
+    border-top: 5px solid var(--primary-color);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 }
 
-/* HoverEffects GSAP-free solicitado no protótipo */
 .card:hover {
     transform: translateY(-5px);
 }
@@ -150,36 +153,10 @@ body {
     font-weight: bold;
 }
 
-/* Rodapé */
-.main-footer {
-    background-color: var(--dark-color);
-    color: var(--white);
-    padding: 2rem 5%;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.legal-disclaimer {
-    margin-top: 1rem;
-    color: #ced4da;
-    font-size: 0.8rem;
-}
-
-/* Breakpoints para Responsividade Heurística */
-@media (min-width: 768px) {
-    .cards-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 Colunas no Desktop */
-    }
-
-    .hero-content h1 {
-        font-size: 3.5rem;
-    }
-}
-
 /* Módulo de Busca Personalizado */
 .modulo-busca {
     max-width: 800px;
-    margin: 100px auto 4rem auto; /* Espaço para o header fixo */
+    margin: 2rem auto 4rem auto;
     padding: 0 1.5rem;
 }
 
@@ -194,7 +171,7 @@ body {
 
 #busca-endereco:focus {
     border-color: var(--secondary-color);
-    outline: 3px solid rgba(0, 123, 255, 0.2); /* CORRIGIDO: espaço adicionado */
+    outline: 3px solid rgba(0, 123, 255, 0.2);
 }
 
 /* Cards de Resultado Gerados pelo JS */
@@ -211,7 +188,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--light-color); /* CORRIGIDO: espaço adicionado */
+    border-bottom: 2px solid var(--light-color);
     padding-bottom: 0.75rem;
     margin-bottom: 1rem;
 }
@@ -225,14 +202,14 @@ body {
 }
 
 .destaque-agenda {
-    color: #d97706; /* Cor âmbar de alto contraste */
+    color: #d97706;
     font-weight: bold;
 }
 
 /* Botão de Integração com WhatsApp API */
 .btn-whatsapp {
     display: inline-block;
-    background-color: #128C7E; /* Verde WhatsApp oficial com contraste aprovado */
+    background-color: #128C7E;
     color: var(--white);
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
@@ -247,10 +224,10 @@ body {
     outline: 3px solid #128C7E;
 }
 
-/* Seção de Atribuições */
+/* Seção de Atribuições (Accordion) */
 .atribuoes-legais {
     max-width: 1000px;
-    margin: 4rem auto;
+    margin: 2rem auto 4rem auto;
     padding: 0 1.5rem;
 }
 
@@ -263,7 +240,6 @@ body {
     margin-right: auto;
 }
 
-/* AccordionWrapper */
 .accordion-item {
     background: var(--white);
     border: 1px solid #e2e8f0;
@@ -287,12 +263,11 @@ body {
 }
 
 .accordion-header:hover {
-    background-color: #f1fdf3; /* Toque suave da cor primária */
+    background-color: #f1fdf3;
 }
 
-/* Foco visível heurístico exigido pela WCAG */
 .accordion-header:focus {
-    outline: 3px solid var(--secondary-color); /* CORRIGIDO: espaço adicionado */
+    outline: 3px solid var(--secondary-color);
     background-color: #f1fdf3;
 }
 
@@ -318,55 +293,39 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Transição quando aberto */
 .accordion-header[aria-expanded="true"] .icon-seta {
     transform: rotate(180deg);
     color: var(--primary-color);
 }
 
-/* Painel de Conteúdo Interno */
 .accordion-panel {
-    padding: 0 1.5rem 1.5rem 4.5rem; /* Alinhado após o número */
+    padding: 0 1.5rem 1.5rem 4.5rem;
     color: #4a5568;
     line-height: 1.7;
     animation: fadeIn 0.3s ease-in-out;
 }
 
-@keyframes fadeIn { /* CORRIGIDO: Espaço adicionado no nome da animação */
-    from { opacity: 0; transform: translateY(-5px); } /* CORRIGIDO: formatação interna */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Ajuste mobile-first para telas pequenas */
-@media (max-width: 480px) {
-    .accordion-header {
-        padding: 1rem;
-    }
-    .accordion-panel {
-        padding: 0 1rem 1rem 1rem; /* CORRIGIDO: espaçamento corrigido */
-    }
-    .num-atribuicao {
-        margin-right: 0.75rem;
-    }
-}
-
-/* Seção Linha do Tempo */
+/* Seção Linha do Tempo (Timeline) */
 .rotina-diaria {
     background-color: var(--white);
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
     margin-top: 2rem;
 }
 
 .timeline-container {
     position: relative;
-    max-width: 1200px;
-    margin: 4rem auto 0 auto;
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
     display: flex;
-    flex-direction: column; /* Padrão Mobile-First: Fluxo Vertical */
+    flex-direction: column;
     gap: 2.5rem;
 }
 
-/* A Linha Física Base */
 .timeline-linha {
     position: absolute;
     left: 15px;
@@ -376,310 +335,210 @@ body {
     background-color: #e2e8f0;
 }
 
-/* Itens da Timeline */
 .timeline-item {
     position: relative;
-    display: flex;
-    align-items: flex-start;
-    padding-left: 45px; /* Espaço para a linha e o ponto */
+    padding-left: 45px;
 }
 
-/* O Nó da Timeline */
 .timeline-ponto {
     position: absolute;
     left: 7px;
     top: 6px;
     width: 20px;
     height: 20px;
+    background-color: var(--white);
+    border: 4px solid var(--primary-color);
     border-radius: 50%;
-    background-color: var(--primary-color);
-    border: 4px solid var(--white); /* CORRIGIDO: espaço adicionado */
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
     z-index: 2;
-    transition: transform 0.2s ease;
-}
-
-.timeline-item:hover .timeline-ponto {
-    transform: scale(1.2);
-}
-
-/* Box de Conteúdo */
-.timeline-conteudo {
-    background: var(--light-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    width: 100%;
-    border-left: 4px solid var(--primary-color); /* CORRIGIDO: espaço adicionado */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .timeline-hora {
     display: inline-block;
-    font-size: 0.85rem;
+    background-color: #e8f5e9;
+    color: var(--primary-color);
     font-weight: bold;
-    color: var(--secondary-color);
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
     margin-bottom: 0.5rem;
 }
 
-.timeline-conteudo h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark-color);
-}
-
-.timeline-conteudo p {
-    color: #4a5568;
-    font-size: 0.95rem;
-}
-
-/* ─── TRANSFORMAÇÃO PARA DESKTOP (BREAKPOINT ADAPTATIVO) ─── */
-@media (min-width: 992px) {
-    .timeline-container {
-        flex-direction: row; /* Alinhamento Horizontal */
-        align-items: stretch;
-        gap: 1.5rem;
-    }
-
-    /* CORRIGIDO: Estas propriedades abaixo foram movidas para dentro do bloco @media */
-    .timeline-linha {
-        left: 0;
-        right: 0;
-        top: 25px;
-        bottom: auto;
-        width: 100%;
-        height: 4px;
-    }
-
-    .timeline-item {
-        flex: 1;
-        flex-direction: column;
-        padding-left: 0;
-        padding-top: 50px; /* Joga o conteúdo para baixo da linha horizontal */
-        text-align: center;
-    }
-
-    /* Reposiciona o Ponto no cruzamento superior */
-    .timeline-ponto {
-        left: 50%;
-        top: 17px;
-        transform: translateX(-50%);
-    }
-
-    .timeline-item:hover .timeline-ponto {
-        transform: translateX(-50%) scale(1.2);
-    }
-
-    .timeline-conteudo {
-        border-left: none;
-        border-top: 4px solid var(--primary-color); /* CORRIGIDO: espaço adicionado */
-        height: 100%; /* Equaliza a altura dos cards na horizontal */
-    }
-} /* Fim do @media 992px */
-
-
-/* Layout da seção Prevenção */
+/* Seção Prevenção e Cuidado (Formulários e Tabelas) */
 .prevencao-educativa {
-    background-color: var(--light-color);
-    padding: 5rem 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 1.5rem;
 }
 
 .grid-prevencao {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .card-ferramenta {
     background: var(--white);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--secondary-color);
 }
 
-.desc-ferramenta {
-    color: #555;
-    margin: 0.5rem 0 1.5rem 0;
-    font-size: 0.95rem;
+.card-ferramenta.completo {
+    border-left: none;
+    border-top: 5px solid var(--primary-color);
 }
 
-/* Formulários */
+.form-estilizado {
+    margin-top: 1.5rem;
+}
+
 .grupo-input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.2rem;
 }
 
 .grupo-input label {
+    display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    font-size: 0.95rem;
 }
 
 .grupo-input input {
+    width: 100%;
     padding: 0.75rem;
-    border: 2px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
-.grupo-input input:focus {
-    border-color: var(--secondary-color);
-    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .btn-primario {
     width: 100%;
-    padding: 0.8rem;
     background-color: var(--primary-color);
     color: var(--white);
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: 0.8rem;
     font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.btn-primario:hover, .btn-primario:focus {
-    background-color: #1e7e34;
-    outline: 3px solid rgba(40, 167, 69, 0.3); /* CORRIGIDO: espaço adicionado */
+.btn-primario:hover {
+    background-color: #218838;
 }
 
-/* Checklists */
 .fieldset-checklist {
     border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .item-check {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
+    margin-bottom: 1rem;
     cursor: pointer;
-    padding: 0.75rem;
-    background: var(--light-color);
-    border-radius: 6px;
-    transition: background-color 0.2s;
-}
-
-.item-check:hover {
-    background-color: #edf2f7;
 }
 
 .item-check input[type="checkbox"] {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-top: 0.15rem;
-    cursor: pointer;
+    margin-top: 0.25rem;
+    transform: scale(1.2);
 }
 
-/* Painéis de Feedback dinâmico */
 .painel-feedback {
     margin-top: 1.5rem;
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 6px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    background-color: #e8f5e9;
-    border-left: 5px solid var(--primary-color); /* CORRIGIDO: espaço adicionado */
+    background-color: #e3f2fd;
+    border-left: 4px solid var(--secondary-color);
 }
 
-.painel-feedback.alerta-moderado {
+.painel-alerta {
     background-color: #fff3cd;
-    border-left-color: #ffc107;
-    color: #856404;
+    border-left: 4px solid #ffc107;
 }
 
-.painel-feedback.alerta-alto {
-    background-color: #f8d7da;
-    border-left-color: #dc3545;
-    color: #721c24;
-}
-
-/* Responsividade */
-@media (min-width: 768px) {
-    .grid-prevencao {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Container estendido para ocupar toda a largura do grid se necessário */
-.card-ferramenta.completo {
-    grid-column: 1 / -1;
-}
-
-/* Botões de Filtro */
+/* Estilos de Filtros e Tabela de Vacina */
 .filtros-vacina {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .btn-filtro {
-    background-color: var(--light-color);
-    border: 1px solid #cbd5e1;
-    color: var(--dark-color);
+    background-color: #e2e8f0;
+    border: none;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 0.9rem;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.btn-filtro:hover, .btn-filtro:focus {
-    border-color: var(--secondary-color);
-    background-color: #e0f2fe;
 }
 
 .btn-filtro.ativo {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--white);
-    border-color: var(--secondary-color);
 }
 
-/* Engenharia de Tabelas Responsivas */
 .tabela-responsiva {
     width: 100%;
-    overflow-x: auto; /* Permite rolagem lateral no mobile sem quebrar o layout */
-    -webkit-overflow-scrolling: touch;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
+    overflow-x: auto;
 }
 
 .tabela-vacinas {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 1rem;
     text-align: left;
-    font-size: 0.95rem;
+}
+
+.tabela-vacinas th, .tabela-vacinas td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .tabela-vacinas th {
-    background-color: #f1f5f9;
-    color: var(--dark-color);
+    background-color: var(--light-color);
     font-weight: bold;
-    padding: 1rem;
-    border-bottom: 2px solid #cbd5e1;
 }
 
-.tabela-vacinas td {
-    padding: 1rem;
-    border-bottom: 1px solid #e2e8f0;
-    color: #334155;
+/* Rodapé */
+.main-footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 2rem 5%;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
-/* Efeito zebra para legibilidade (WCAG 2.1) */
-.tabela-vacinas tbody tr:nth-child(even) { /* CORRIGIDO: espaço adicionado entre tbody e tr */
-    background-color: #f8fafc;
+.legal-disclaimer {
+    margin-top: 1rem;
+    color: #ced4da;
+    font-size: 0.8rem;
 }
 
-.tabela-vacinas tbody tr:hover { /* CORRIGIDO: espaço adicionado entre tbody e tr */
-    background-color: #f0fdf4;
+/* Breakpoints para Responsividade */
+@media (min-width: 768px) {
+.cards-grid, .grid-prevencao {
+grid-template-columns: repeat(3, 1fr);
+}
+.grid-prevencao {
+grid-template-columns: repeat(2, 1fr);
+}
+.hero-content h1 {
+font-size: 3.5rem;
+}
+.timeline-container {
+padding-left: 0;
+}
+}
+@media (max-width: 480px) {
+.accordion-header {
+padding: 1rem;
+}
+.accordion-panel {
+padding: 0 1rem 1rem 1rem;
+}
+.num-atribuicao {
+margin-right: 0.75rem;
+}
 }
